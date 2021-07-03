@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './Home/Home.js'
+import { BrowserRouter, Route } from 'react-router-dom'
+import FetchData from './fetchData.js';
+import Register from './User/Register.js';
+import Login from './User/Login.js';
+import Play from './Play/Play.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Route path='/' exact component={Home} />
+      <Route path='/fetch' exact component={FetchData} />
+      <Route path='/register/' exact component={Register} />
+      <Route path='/login/' exact component={Login} />
+      <Route path='/play/' exact component={Play} />
+    </BrowserRouter>
   );
 }
 
